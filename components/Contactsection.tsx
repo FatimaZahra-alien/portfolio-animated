@@ -135,10 +135,20 @@ export default function ContactSection() {
 
       {/* Contact Form */}
       <div className="relative z-10 pb-32 px-6 max-w-3xl mx-auto">
-        <div
-          className="reveal glass-card rounded-2xl p-8 md:p-12"
-          style={{ opacity: 0, transform: "translateY(24px)", transition: "all 0.7s ease 0.1s" }}
-        >
+        
+<div
+  className="reveal rounded-2xl p-8 md:p-12"
+  style={{
+    opacity: 0,
+    transform: "translateY(24px)",
+    transition: "all 0.7s ease 0.1s",
+    background: "rgba(0, 0, 0, 0.55)",
+    backdropFilter: "blur(24px)",
+    WebkitBackdropFilter: "blur(24px)",
+    border: "0.5px solid rgba(255,255,255,0.12)",
+    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.08), 0 24px 60px rgba(0,0,0,0.5)",
+  }}
+>
           {sent ? (
             <div className="text-center py-10">
               <p

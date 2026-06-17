@@ -44,14 +44,12 @@ export default function StackSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-32 px-6 overflow-hidden">
-      {/* Top divider */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
-
-      {/* Fade to black at bottom to blend into Contact section */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent to-black z-10 pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto relative z-0">
+    <section
+      ref={sectionRef}
+      className="relative py-32 px-6 overflow-hidden"
+      style={{ background: "#000000" }}
+    >
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <p
             className="reveal text-xs tracking-[0.25em] text-white/40 uppercase mb-6"
@@ -75,8 +73,15 @@ export default function StackSection() {
         </div>
 
         <div
-          className="reveal glass-card rounded-2xl p-8 md:p-12"
-          style={{ opacity: 0, transform: "translateY(24px)", transition: "all 0.7s ease" }}
+          className="reveal rounded-2xl p-8 md:p-12"
+          style={{
+            opacity: 0,
+            transform: "translateY(24px)",
+            transition: "all 0.7s ease",
+            background: "rgba(255,255,255,0.04)",
+            border: "0.5px solid rgba(255,255,255,0.08)",
+            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06), 0 24px 64px rgba(0,0,0,0.35)",
+          }}
         >
           <div className="grid md:grid-cols-2 gap-x-16 gap-y-7">
             {stack.map((item, i) => (
@@ -85,14 +90,21 @@ export default function StackSection() {
                   <span className="text-sm text-white/70 tracking-wide">{item.name}</span>
                   <span className="text-xs text-white/30">{item.level}%</span>
                 </div>
-                <div className="h-px bg-white/8 rounded-full overflow-hidden">
+                <div
+                  className="h-px rounded-full overflow-hidden"
+                  style={{ background: "rgba(255,255,255,0.08)" }}
+                >
                   <div
                     ref={(el) => {
                       if (el) barsRef.current[i] = el;
                     }}
                     data-width={`${item.level}%`}
-                    className="h-full bg-white/40 rounded-full"
-                    style={{ width: "0%", transition: "width 1s cubic-bezier(0.4,0,0.2,1)" }}
+                    className="h-full rounded-full"
+                    style={{
+                      width: "0%",
+                      transition: "width 1s cubic-bezier(0.4,0,0.2,1)",
+                      background: "rgba(255,255,255,0.4)",
+                    }}
                   />
                 </div>
               </div>
