@@ -33,8 +33,7 @@ export default function AboutSection() {
 
   return (
     <section id="about" ref={sectionRef} className="relative py-32 px-6 overflow-hidden">
-      {/* Subtle divider glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+      
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         {/* Left — text */}

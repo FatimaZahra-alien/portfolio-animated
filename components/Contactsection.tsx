@@ -83,8 +83,7 @@ export default function ContactSection() {
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
-      {/* Top divider */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-white/20 to-transparent z-10" />
+      
 
       {/* Word Reveal Quote */}
       <div className="relative z-10 py-32 px-6 md:px-16 max-w-5xl mx-auto">
